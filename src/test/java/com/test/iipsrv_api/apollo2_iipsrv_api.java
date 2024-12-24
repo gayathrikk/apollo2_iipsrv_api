@@ -16,7 +16,7 @@ public class apollo2_iipsrv_api {
 	    		    .auth()
 	    		    .basic("admin", "admin")
 	    		    .when()
-	    		    .get("https://apollo2.humanbrain.in/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=/data/storageIIT/humanbrain/analytics/52/NISL/B_52_MTB10-SL_71-ST_NISL-SE_427_compressed.jp2&WID=1024&GAM=1.4&MINMAX=1:0,255&MINMAX=2:0,255&MINMAX=3:0,255&JTL=0,0");
+	    		    .get("https://apollo2.humanbrain.in/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=/data/storageIIT/humanbrain/analytics/222/NISL/B_222_FB74-SL_114-ST_NISL-SE_340_compressed.jp2&WID=1024&GAM=1.4&MINMAX=1:0,255&MINMAX=2:0,255&MINMAX=3:0,255&JTL=6,614");
 
 	        int statusCode1 = response1.getStatusCode();
 	        if (statusCode1 == 200) {
