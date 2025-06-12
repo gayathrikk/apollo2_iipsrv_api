@@ -56,7 +56,10 @@ public class apollo2_iipsrv_api {
         
         // ✅ Custom subject and body
         message.setSubject("IIPSRV Failed");
-        message.setText("Nathan bro iipsrv fail.. Ennanu parunga pls\n\nStatus code: " + statusCode);
+        message.setText("Nathan bro 😩,\n\n"
+        + "I am iipsrv... and I’ve failed to serve the request.\n\n"
+        + "Tried my best to fetch the image, but a " + statusCode + " error knocked me down.\n\n"
+        + "Please take a look and help me get back on track. 🙏);
 
         Transport.send(message);
         System.out.println("Failure notification email sent successfully.");
