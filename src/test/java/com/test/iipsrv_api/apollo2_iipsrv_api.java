@@ -31,37 +31,39 @@ public class apollo2_iipsrv_api {
         Assert.assertEquals(statusCode1, 200, "API request to the apollo2 iipsrv failed");
     }
 
-    public void sendFailureEmail(int statusCode) {
-        final String fromEmail = "automationsoftware25@gmail.com";
-        final String toEmail = "gayuriche26@gmail.com";
-        final String password = "wjzcgaramsqvagxu"; 
+   public void sendFailureEmail(int statusCode) {
+    final String fromEmail = "automationsoftware25@gmail.com";
+    final String toEmail = "gayuriche26@gmail.com";
+    final String password = "wjzcgaramsqvagxu"; // App-specific password
 
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com"); 
-        props.put("mail.smtp.port", "587"); 
-        props.put("mail.smtp.auth", "true"); 
-        props.put("mail.smtp.starttls.enable", "true"); 
+    Properties props = new Properties();
+    props.put("mail.smtp.host", "smtp.gmail.com");
+    props.put("mail.smtp.port", "587");
+    props.put("mail.smtp.auth", "true");
+    props.put("mail.smtp.starttls.enable", "true");
 
-        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(fromEmail, password);
-            }
-        });
-
-        try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(fromEmail));
-            message.setRecipients(
-                    Message.RecipientType.TO, InternetAddress.parse(toEmail));
-            message.setSubject("API Request Failed");
-            message.setText("The API request to apollo2 iipsrv failed with status code: " + statusCode);
-
-            Transport.send(message);
-            System.out.println("Failure notification email sent successfully.");
-
-        } catch (MessagingException e) {
-            e.printStackTrace();
-            System.err.println("Failed to send email notification.");
+    Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+        protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(fromEmail, password);
         }
+    });
+
+    try {
+        Message message = new MimeMessage(session);
+        message.setFrom(new InternetAddress(fromEmail));
+        message.setRecipients(
+                Message.RecipientType.TO, InternetAddress.parse(toEmail));
+        
+        // ✅ Custom subject and body
+        message.setSubject("IIPSRV Failed");
+        message.setText("Nathan bro iipsrv fail.. Ennanu parunga pls\n\nStatus code: " + statusCode);
+
+        Transport.send(message);
+        System.out.println("Failure notification email sent successfully.");
+
+    } catch (MessagingException e) {
+        e.printStackTrace();
+        System.err.println("Failed to send email notification.");
     }
+}
 }
