@@ -33,7 +33,7 @@ public class apollo2_iipsrv_api {
 
    public void sendFailureEmail(int statusCode) {
     final String fromEmail = "automationsoftware25@gmail.com";
-    final String toEmail = "gayuriche26@gmail.com";
+    final String toEmail = "nathan.i@htic.iitm.ac.in";
     final String password = "wjzcgaramsqvagxu"; // App-specific password
 
     Properties props = new Properties();
