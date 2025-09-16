@@ -33,7 +33,7 @@ public class apollo2_iipsrv_api {
 
   public void sendFailureEmail(int statusCode) {
     final String fromEmail = "automationsoftware25@gmail.com";
-    final String toEmail = "nathan.i@htic.iitm.ac.in";
+    final String toEmail = "nitheshkumar.s@htic.iitm.ac.in";
     final String password = "wjzcgaramsqvagxu"; // App-specific password
 
     Properties props = new Properties();
@@ -55,15 +55,13 @@ public class apollo2_iipsrv_api {
 
         // ✅ Add CC recipients
         message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(
-            "azizahammed.a@htic.iitm.ac.in," +
-            "satheskumar@htic.iitm.ac.in," +
-            "sivathanun@htic.iitm.ac.in," +
-            "supriti@htic.iitm.ac.in"
+            "divya.d@htic.iitm.ac.in," +
+            "venip@htic.iitm.ac.in" 
         ));
 
         message.setSubject("IIPSRV Failed");
 
-        message.setText("Nathan bro 😩,\n\n"
+        message.setText("Hi,\n\n"
                 + "I am iipsrv... and I’ve failed to serve the request.\n\n"
                 + "Tried my best to fetch the image, but a " + statusCode + " error knocked me down.\n\n"
                 + "Please take a look and help me get back on track. 🙏");
